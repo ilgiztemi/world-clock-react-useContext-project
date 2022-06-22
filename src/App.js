@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ClockProvider } from "./context/ClockContex";
+import CurrentTime from "./components/CurrentTime";
+import SelectTime from "./components/SelectTime";
+import ClocksCard from "./components/ClocksCard";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ClockProvider>
+        <h1>World Clock</h1>
+        <CurrentTime />
+        <SelectTime />
+        <ClocksCard />
+      </ClockProvider>
     </div>
   );
 }
-
-export default App;
